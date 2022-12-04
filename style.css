@@ -185,6 +185,7 @@ input:focus ~ .password-message {
 @media (min-width:500px) {
   .form-input {
     width: CALC(50% - .75rem);
+    margin: 0;
   }
 }
 
