@@ -1,0 +1,231 @@
+:root {
+  --pink: #ff4ebb;
+  --pink-dk: #c33b8f;
+  --blue-dk: #156FA2;
+  --blue: #BAE3FE;
+  --blue-lt: #EBF7FF;
+  --background: #212758;
+  --text-dark: #000;
+  --text-light: #fff; 
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-light);
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  color: var(--pink);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--pink-dk);
+}
+
+.btn {
+  display:inline-block;
+  position: static;
+  margin: 1.5rem 0;
+  padding: .5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  background-color: var(--pink);
+  font-size: 1.1rem;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--pink-dk);
+}
+
+.section-branding {
+  background: no-repeat url('./assets/shubham-dhage-ykFTt5Dq1RU-unsplash.jpg');
+  background-size: cover;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 10vh
+}
+
+.branding-logo {
+  background-color: rgba(0,0,0,.4);
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-text {
+  color: white;
+  font-weight: 900;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.photo-credit,
+.photo-credit a {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: white;
+  font-size: .75rem;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+.section-signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.signup-info {
+  margin: 3rem 2rem;
+}
+
+.signup-form {
+  background-color: var(--blue-lt);
+  padding: 4rem 2rem;
+}
+
+form > section { 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  max-width: 500px; 
+  margin: 0 auto;
+}
+
+.form-input {
+  width: CALC(50% - .75rem);
+  min-width: 300px;
+  margin: auto;
+}
+
+label {
+  font-size: .7rem;
+  color: var(--background);
+  letter-spacing: 1px;
+}
+
+input {
+  margin-top: .25rem;
+  padding: 5px;
+  width: 100%;
+  border: solid 1px var(--background);
+  border-radius: 4px;
+  color: var(--background)
+}
+
+input.error {
+  border-color: red;
+  border-width: 2px;
+}
+
+input.error:focus {
+  border: solid 1px var(--background);
+
+}
+
+input:focus  {
+  border-color: blue;
+  box-shadow: rgba(0,0,0,.2) 2px 2px;
+  border-width: 2px;
+  outline: none;
+}
+
+input.error ~.password-message {
+  display: block;
+  color: red;
+}
+
+.password-message {
+  display: none;
+  margin-top: 1rem;
+  font-size: .7rem;
+  color: var(--background);
+  letter-spacing: 1px;
+  animation: fadeIn .5s; 
+}
+
+
+input:focus ~ .password-message {
+  display: block;
+}
+
+.password-requirements > li.passed {
+  color:green;
+}
+
+
+
+.error-message {
+  display: none;
+}
+
+.error + .error-message {
+  display: flex;
+  font-size: .7rem;
+  margin-top: .3rem;
+  color: red;
+}
+
+.signup-cta {
+  padding: 2.5rem 2rem 4rem
+}
+
+.signup-cta-member {
+  font-size: .9rem;
+}
+
+@media (min-width:500px) {
+  input {
+    min-width: none;
+    margin: none;
+  }
+}
+
+@media (min-width:900px) {
+  .container {
+    display: flex;
+  }
+
+  .section-branding {
+    width: 45vw;
+    height: 100vh;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .branding-logo {
+    margin: auto;
+    width: 100%;
+  }
+
+  .photo-credit {
+    justify-self: flex-end;
+    margin-top: auto;
+  }
+
+  .section-signup {
+    width: 55vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  form > section {
+    margin: 0;
+  }
+
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

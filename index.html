@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Sign Up Form</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="section-branding">
+      <div class="branding-logo">
+        <div class="logo-text">The Company</div>
+      </div>
+      <div class="photo-credit">Photo by <a href="https://unsplash.com/@theshubhamdhage?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Shubham Dhage</a> on <a href="https://unsplash.com/s/photos/sci-fi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
+    </div>
+    <div class="section-signup">
+      <div class="signup-info">
+        <div class="signup-info-text">This is not a just a company. It's The Company. Signing up with this form will do absolutely nothing. Side effects include extreme satisfaction and potential insanity. </div>
+      </div>
+      <div class="signup-form">
+        <form id="sign-up" action="http://127.0.0.1:3001/sign-up-form/index.html" method="get">
+          <section>
+            <div class="form-input">
+              <label for="first_name">First Name*</label>
+              <input name="first_name" type="text" maxlength="50" required>
+              <div class="error-message">* First Name Required</div>
+            </div>
+
+            <div class="form-input">
+              <label for="last_name">Last Name*</label>
+              <input name="last_name" type="text" maxlength="50" required>
+              <div class="error-message">* Last Name Required</div>
+            </div>
+
+            <div class="form-input">
+              <label for="email">Email*</label>
+              <input name="email" type="email" maxlength="100" required>
+              <div class="error-message">* Invalid Email</div>
+            </div>
+
+            <div class="form-input">
+              <label for="phone">Phone Number*</label>
+              <input name="phone" type="tel"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+              placeholder="___ - ___ - ____" required>
+              <div class="error-message">* Invalid Phone Number</div>
+            </div>
+
+            <div class="form-input">
+              <label for="password">Password*</label>
+              <input id="password-input" name="password" type="password" required>
+              <div class="error-message">* Passwords Doesn't Meet Requirements</div>
+              <div class="password-message">
+                Password Requirements:
+                <ul class="password-requirements">
+                  <li id="length-requirement">8 characters minimum</li>
+                  <li id="lower-requirement">1 lowercase letter</li>
+                  <li id="upper-requirement">1 uppercase letter</li>
+                  <li id="numsym-requirement">1 number or symbol</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="form-input">
+              <label for="confirm_password">Confirm Password*</label>
+              <input name="confirm_password" type="password" required>
+              <div class="error-message">* Passwords Don't Match</div>
+            </div>
+          </section>
+        </form>
+      </div>
+      <div class="signup-cta">
+        <!-- <button type="submit" form="sign-up" class="btn">Create Account</button> -->
+        <button id="signup-submit" class="btn">Create Account</button>
+        <div class="signup-cta-member">Already have an account? <a href="">Log In</a></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
