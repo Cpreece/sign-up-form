@@ -69,6 +69,10 @@ function validatePassword() {
   return false
 };
 
+function catchEnterPress(event) {
+  if (event.code === 'Enter') submitForm();
+};
+
 function submitForm(event) {
   (fname.value.length < 1)? fname.classList.add('error') : fname.classList.remove('error');
   (lname.value.length < 1)? lname.classList.add('error') : lname.classList.remove('error');
@@ -78,14 +82,14 @@ function submitForm(event) {
   (password.value === passwordConfirm.value)? passwordConfirm.classList.remove('error') : passwordConfirm.classList.add('error');
 
   if (
-    fname.value.length < 1 && lname.value.length < 1 &&
+    fname.value.length > 0 && lname.value.length > 0 &&
     email.value.match('^.*@.{2,}\..{2,}$') && phone.value.match('[0-9]{3}-[0-9]{3}-[0-9]{4}') &&
     validatePassword() && password.value === passwordConfirm.value
   ) {
     document.getElementById("sign-up").submit();
-    console.log('test')
   }
 };
 
 let button = document.querySelector('#signup-submit');
 button.addEventListener('click', submitForm);
+document.addEventListener("keyup", catchEnterPress);
